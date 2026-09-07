@@ -1,0 +1,65 @@
+# ==============================================================================
+# LBF OS - SCRIPT DE COMPILAÇÃO E LINKAGEM TRADICIONAL (RING3 - SOFTWARE / TLS_T)
+# ==============================================================================
+
+# 1. Compilação do código fonte do aplicativo (Com otimização máxima -O3 + SSE3)
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Browser/crypto/tls_t.c -o Browser/crypto/tls_t.o
+
+# 2. Linkagem estática final utilizando o LD diretamente para controle total (tls_t.elf)
+
+ld -m elf_x86_64 -T user.ld -static -o tls_t.elf \
+    system/crt0.o \
+    Browser/crypto/tls_t.o \
+    net_user/socket.o \
+    net_user/net_interface.o \
+    net_user/tcp.o \
+    net_user/udp.o \
+    net_user/ip.o \
+    net_user/net_poll.o \
+    net_user/icmp.o \
+    net_user/arp.o \
+    net_user/dns.o \
+    net_user/dhcp.o \
+    Browser/crypto/sha256.o \
+    Browser/crypto/hmac.o \
+    Browser/crypto/tls_prf.o \
+    Browser/crypto/x25519.o \
+    Browser/crypto/aes_gcm.o \
+    Browser/crypto/tls.o \
+    Browser/crypto/rng.o \
+    Browser/crypto/x509.o \
+    Browser/crypto/ec256.o \
+    Browser/crypto/rsa_verify.o \
+    Runtime_sdk/sdk/libgui.o \
+    Runtime_sdk/sdk/TScrollBar.o \
+    Runtime_sdk/sdk/TListView.o \
+    Runtime_sdk/sdk/TComboBox.o \
+    Runtime_sdk/sdk/TButton.o \
+    Runtime_sdk/sdk/TEdit.o \
+    Runtime_sdk/sdk/TMemo.o \
+    Runtime_sdk/sdk/TCheckBox.o \
+    Runtime_sdk/sdk/TRadioButton.o \
+    Runtime_sdk/sdk/TLabel.o \
+    Runtime_sdk/sdk/TWebImage.o \
+    Runtime_sdk/sdk/TWebPage.o \
+    Browser/web_html.o \
+    Browser/web_img.o \
+    gui/gui.o \
+    gui/wm.o \
+    gui/z_order.o \
+    gui/gui_interaction.o \
+    system/graphics.o \
+    system/fonts.o \
+    system/string.o \
+    system/sysutils.o \
+    system/setjmp_asm.o \
+    events/input_events.o \
+    Runtime_sdk/components/TOS_IPC.o \
+    Runtime_sdk/components/TOSSerial.o \
+    system/memcpy_asm.o \
+    system/memset_asm.o \
+    system/syscall_asm.o \
+    system/malloc.o
+    
+    
+    mcopy -o -i disco_sata.img tls_t.elf ::/
