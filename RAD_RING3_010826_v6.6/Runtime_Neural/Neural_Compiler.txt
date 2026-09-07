@@ -1,0 +1,31 @@
+rm -f Runtime_Neural/core/*.o Runtime_Neural/neural/*.o Runtime_Neural/Software/*.o
+
+# CORE
+
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iasynth.c -o Runtime_Neural/core/iasynth.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iarouter.c -o Runtime_Neural/core/iarouter.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iamath.c -o Runtime_Neural/core/iamath.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/ialogic.c -o Runtime_Neural/core/ialogic.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iamemory.c -o Runtime_Neural/core/iamemory.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iaknowledge.c -o Runtime_Neural/core/iaknowledge.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iadialog.c -o Runtime_Neural/core/iadialog.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iaemotion.c -o Runtime_Neural/core/iaemotion.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/ialearn.c -o Runtime_Neural/core/ialearn.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iareason.c -o Runtime_Neural/core/iareason.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iapersona.c -o Runtime_Neural/core/iapersona.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iapattern.c -o Runtime_Neural/core/iapattern.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iaembed.c -o Runtime_Neural/core/iaembed.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iafichas.c -o Runtime_Neural/core/iafichas.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iafichas_dados.c -o Runtime_Neural/core/iafichas_dados.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iafichas_dados_hist.c -o Runtime_Neural/core/iafichas_dados_hist.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iasocial.c -o Runtime_Neural/core/iasocial.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iasocial_dados.c -o Runtime_Neural/core/iasocial_dados.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iacatalogo.c -o Runtime_Neural/core/iacatalogo.o
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/core/iamaestro.c -o Runtime_Neural/core/iamaestro.o
+
+
+# NEURAL
+
+gcc -O3 -msse3 -m64 -ffreestanding -fno-stack-protector -fno-pie -Isystem -I. -c Runtime_Neural/neural/neural.c -o Runtime_Neural/neural/neural.o
+
+# 
